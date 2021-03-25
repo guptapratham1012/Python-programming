@@ -11,7 +11,6 @@ csv=input("Enter the CSV file name: ")
 def connect(dbname):
     conn = sqlite3.connect(dbname)
     conn.execute("CREATE TABLE IF NOT EXISTS PLAYERS(NAME TEXT,DETAILS TEXT,PAC INT,SHO INT,PAS INT,DRI INT,DEF INT,PHY INT)")
-    print("CREATED TABLE SUCCESSFULLY!!")
     conn.close()
 def insert_into_table(dbname,values):
     conn = sqlite3.connect(dbname)
@@ -55,3 +54,6 @@ for a in q[f]:
 dataframe=pandas.DataFrame(scrapped_list)
 dataframe.to_csv(csv+'.csv')
 get_player_info(dbname)
+print("===============================================================")
+print("CREATED CSV FILE AND SAVED DATA IN SQL DATABASE SUCCESSFULLY!!")
+print("===============================================================")
